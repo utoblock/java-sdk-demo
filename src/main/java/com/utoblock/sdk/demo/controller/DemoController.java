@@ -99,4 +99,23 @@ public class DemoController extends BaseController {
                 .start();
         return JSON.toJSONString(response);
     }
+
+    @PostMapping("/consumeNoPass")
+    @ApiOperation(value = "免密消费")
+    public String consumeNoPass(@ApiParam(value = "用户账号", required = true) @RequestParam String account,
+                                @ApiParam(value = "商品名称", required = true) @RequestParam String name,
+                                @ApiParam(value = "商户流水号", required = true) @RequestParam String tradeNo,
+                                @ApiParam(value = "消耗积分", required = true) @RequestParam BigDecimal value,
+                                @ApiParam(value = "描述") @RequestParam(required = false) String description,
+                                @ApiParam(value = "额外参数") @RequestParam(required = false) String extras) {
+        ConsumeNoPassResponse response = UtoBlock.consumeWithoutPass()
+                .account(account)
+                .name(name)
+                .tradeNo(tradeNo)
+                .value(value)
+                .description(description)
+                .extras(extras)
+                .start();
+        return JSON.toJSONString(response);
+    }
 }
