@@ -56,7 +56,7 @@ public class SwaggerConfig {
                 //页面标题
                 .title("超凡部落sdk demo")
                 //创建人
-                .contact(new Contact("lyx", "www.geetion.com", "yoanliang1992@163.com"))
+                .contact(new Contact("utoblock", "www.utoblock.com", ""))
                 //版本号
                 .version("1.0")
                 //描述
